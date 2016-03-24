@@ -1,0 +1,188 @@
+<!-- Modal Edit Title-->
+<div class="modal fade" id="editTitleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Edit Title</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=editTitle" method="post">
+					<div class="form-group">
+						<label for="exampleInputTitle">Title</label>
+						<input type="text" class="form-control" id="exampleInputTitle" placeholder="Title" name="newTitle" >
+					</div>
+					<div class="form-group">
+						<label for="exampleInputsubTitle">Subtitle</label>
+						<input type="text" class="form-control" id="exampleInputsubTitle" placeholder="Subtitle" name="newsubTitle" >
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPageTitle">Page Title</label>
+						<input type="text" class="form-control" id="exampleInputPageTitle" placeholder="Page Title" name="newPageTitle" >
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+<!-- Modal Edit Para-->
+<div class="modal fade" id="editParaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Edit Paragraph</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=editPara" method="post">
+					<div class="form-group">
+						<!-- <label for="data-seq">seq</label> -->
+						<input type="text" class="form-control" id="data-seq" name="data-seq" placeholder="seq">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputTitle1">Title</label>
+						<input type="text" class="form-control" id="exampleInputTitle1" name="paraTitle" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputContent1">Content</label>
+						<textarea class="form-control" rows="5" id="exampleInputContent1" name="paraContent" placeholder="Content"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="deleteParaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Delete Paragraph</h4>
+			</div>
+			<div class="modal-body" >
+				<form action="submit.php?act=deletePara" method="post">
+					<div class="form-group">
+						<label>Are you sure to delete this Paragraph?</label>
+					</div>
+					<div class="form-group">
+						<!-- <label for="data-seq">seq</label> -->
+						<input type="text" class="form-control" id="data-seq" name="data-seq" placeholder="seq">
+					</div>
+					<h4 class="" id="delInputTitle1">
+					</h4>
+					<p id="delInputContent1"></p>
+					<button type="submit" class="btn btn-warning">Yes! Delete this.</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No! Cancel</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+<!-- Modal Add Para-->
+<div class="modal fade" id="addParaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Add Paragraph</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=addPara" method="post">
+					<div class="form-group">
+						<label for="inputTitle">Title</label>
+						<input type="text" class="form-control" id="inputTitle" name="paraTitle" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="inputContent">Content</label>
+						<textarea class="form-control" rows="5" id="inputContent" name="paraContent" placeholder="Content"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+<!-- Modal Add file-->
+<div class="modal fade" id="addFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Add File</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=addFile" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="inputDescr">Description of File (will be displayed here in table)</label>
+						<textarea class="form-control" rows="5" id="inputDescr" name="fileDescr" placeholder="Description"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="inputCounterInt">Click/ Download Counter (Start From)</label>
+						<input type="text" class="form-control" id="inputCounterInt" name="fileClickInt" placeholder="An Integer">
+					</div>
+					<div class="form-group" required>
+						<label for="fileType">Where is file?</label>
+						<div class="radio">
+							<label><input type="radio" name="fileType" value="ext" onclick="radioClick('fileType','ext')">From External Link</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="fileType" value="upload" onclick="radioClick('fileType','upload')">Upload From System</label>
+						</div>
+						<script type="text/javascript">
+						function radioClick (rName,rVal) {
+							if (rVal=="ext") {
+								$( '#inputFileDiv' ).removeClass('show');
+								$( '#inputFileDiv' ).addClass('hidden');
+								$( '#inputLinkDiv' ).removeClass('hidden');
+								$( '#inputLinkDiv' ).addClass('show');
+							}
+							else if(rVal=="upload") {
+								$( '#inputLinkDiv' ).removeClass('show');
+								$( '#inputLinkDiv' ).addClass('hidden');
+								$( '#inputFileDiv' ).removeClass('hidden');
+								$( '#inputFileDiv' ).addClass('show');
+							}
+						}
+						</script>
+					</div>
+					<div class="form-group hidden" id="inputLinkDiv">
+						<label for="inputLink">Paste Link here</label>
+						<input type="text" class="form-control" id="inputLink" name="linkText" placeholder="URL">
+					</div>
+					<div class="form-group hidden" id="inputFileDiv">
+						<label for="inputFile">Supported file formats are: pdf, documents, images, zip <br /> file size has no limit, but be sure <br /> source files should be zipped.</label>
+						<input  placeholder="Choose file to upload." type='file' name='fileName' id="inputFile">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>

@@ -25,7 +25,7 @@
 			<div class="jumbotron" <?php if($editor==1) echo 'onmouseover="showp(\'btn-title\');" onmouseout="hidep(\'btn-title\');"'; ?> >
 				<?php if($editor==1) 
 					echo '<div class="btn-group" role="group" aria-label="...">
-					<button class="btn btn-primary btn-file btn-xs hidden" data-toggle="modal" data-target="#editTitleModal" type="button" name="title">Change xml File</button>
+					
 					<button class="btn btn-primary btn-title btn-xs hidden" data-toggle="modal" data-target="#editTitleModal" type="button" name="title"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Title</button>
 					</div>'; ?>
 				<h1 class="text-center text-uppercase" id="titleData"><?php echo ($XMLsmo->title->name); ?></h1>
@@ -63,36 +63,29 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1.</td>
-								<td>Jackson</td>
+							<?php
+							$dlist = $XMLsmo->dls->item;
+							for ($i=0; $i < sizeof($dlist); $i++)
+							{ 
+								$di = $dlist[$i];
+								echo '<tr><td>'.($i+1).'.</td>';
+								echo '<td>'.$di->descr.'</td>';
+								echo '
 								<td>
 									<div class="btn-group" role="group" aria-label="...">
-										<button class="btn btn-primary " type="submit"><span class="glyphicon glyphicon-download " aria-hidden="true"></span> Download <span class="badge">4</span></button>
-										<div class="btn-group" role="group">
-											<button type="button" class="btn btn-primary dropdown-toggle btn-table hidden" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											Update
-											<span class="caret"></span>
-											</button>
-											<ul class="dropdown-menu">
-												<li><?php if($editor==1) echo '<button class="btn btn-primary btn-table hidden" type="submit">Edit</button></a></li>
-													<li><button class="btn btn-danger btn-table hidden" type="submit">Delete</button>';?></a></li>
-											</ul>
-										</div>
+										<a class="btn btn-primary " type="submit" hrtef="'.$di->link.'" ';
+								echo ($di->fType=="upload")?('download'):('');
+								echo ' onclick="counter('.($i+1).')"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Download <span class="badge">'.$di->clickCount.'</span></a>';
+								if($editor==1)
+								echo '<button class="btn btn-primary btn-table hidden" data-seq="'.($i+1).'" data-toggle="modal" data-target="#editFileModal" type="submit">Edit</button>
+										<button class="btn btn-danger btn-table hidden" data-seq="'.($i+1).'" data-toggle="modal" data-target="#deleteFileModal" type="submit">Delete</button>
+									';
+								echo '
 									</div>
 								</td>
-							</tr>
-							<tr>
-								<td>1.</td>
-								<td><strong>heading 1 </strong><br> Jackskjd sd sd sdm skdfiwej fiwei k wiejf iwe wefpow keackskjd sd sd sdm skdfiwej fiwei k wiejf iwe wefpow keackskjd sd sd sdm skdfiwej fiwei k wiejf iwe wefpow kefson</td>
-								<td>
-									<div class="btn-group" role="group" aria-label="...">
-										<button class="btn btn-primary" type="submit">Download</button>
-										<?php if($editor==1) echo '<button class="btn btn-primary btn-table hidden" type="submit">Edit</button>
-											<button class="btn btn-danger btn-table hidden" type="submit">Delete</button>';?>
-									</div>
-								</td>
-							</tr>
+								';
+							}
+							?>
 						</tbody>
 					</table>
 				</div>
@@ -107,4 +100,10 @@
 		<!-- Include forEdit.js if editor is ON -->
 		<?php if($editor==1) echo '<script src="forEdit.js"></script>'; ?>
 	</body>
+	<script type="text/javascript">
+	function counter (r) {
+		console.log(r);
+		 window.location.href = "redir.php?w1=" + r;
+	}
+	</script>
 </html>

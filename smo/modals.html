@@ -173,7 +173,7 @@
 					</div>
 					<div class="form-group hidden" id="inputFileDiv">
 						<label for="inputFile">Supported file formats are: pdf, documents, images, zip <br /> file size has no limit, but be sure <br /> source files should be zipped.</label>
-						<input  placeholder="Choose file to upload." type='file' name='fileName' id="inputFile">
+						<input  placeholder="Choose file to upload." type='file' name='filePointer' id="inputFile">
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -186,3 +186,155 @@
 		</div>
 	</div>
 </div>
+
+<!-- Modal Edit file-->
+<div class="modal fade" id="editFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Edit File</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=editFile" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="exampleInputDescr1">Description of File (will be displayed here in table)</label>
+						<textarea class="form-control" rows="5" id="exampleInputDescr1" name="fileDescr" placeholder="Description"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputCount1">Click/ Download Counter (Start From)</label>
+						<input type="text" class="form-control" id="exampleInputCount1" name="fileClickInt" placeholder="An Integer">
+					</div>
+					<div class="form-group">
+						<!-- <label for="data-seq">seq</label> -->
+						<input type="text" class="form-control" id="data-fseq" name="data-fseq" placeholder="seq">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+
+<!-- Modal Delete file-->
+<div class="modal fade" id="deleteFileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Delete File</h4>
+			</div>
+			<div class="modal-body">
+				<form action="submit.php?act=deleteFile" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<!-- <label for="data-seq">seq</label> -->
+						<input type="text" class="form-control" id="data-fseq" name="data-fseq" placeholder="seq">
+					</div>
+					<button type="submit" class="btn btn-danger">Yes! Delete This...</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">No! GO Back...</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+
+<!-- Mark Safe Modal -->
+<div class="modal fade" id="markSafeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Mark Safe</h4>
+			</div>
+			<div class="modal-body" >
+				<form action="submit.php?act=markSafe" method="post">
+					<div class="form-group">
+						<label>Are you sure to 'Mark Safe' this Version!!!</label>
+					</div>
+					<h4 class="" id="markSafeTitle1">Marking safe means..
+					</h4>
+					<p id="markSafeContent1">In future, If site's content is messed up anyhow.  in that case you can recover this version by clicking on 'Restore Last Safe' option in 'Menu'.
+					</p>
+					<button type="submit" class="btn btn-warning">Yes! This is best..</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No! I'll do it later.</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+
+<!-- Restore Safe Modal -->
+<div class="modal fade" id="restoreSafeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Restore Safe</h4>
+			</div>
+			<div class="modal-body" >
+				<form action="submit.php?act=restoreSafe" method="post">
+					<div class="form-group">
+						<label>Are you sure to 'Restore Last Safe' Version!!!</label>
+					</div>
+					<h4 class="" id="restoreSafeTitle1">Restoring Last Safe Means..
+					</h4>
+					<p id="restoreSafeContent1">If site's content is messed up anyhow at present [Disaster]. In this case you can recover Last SAFE version.<br />
+						Last SAFE version would have been marked by Editor in Past.<br />
+						If you have not marked any Last Safe earlier, It will effect 'no change'.<br />
+					</p>
+					<button type="submit" class="btn btn-warning">Yes! This is best..</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No! I'll do it later.</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+
+<!-- Reset Factory Modal -->
+<div class="modal fade" id="resetFactoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Reset Factory Version</h4>
+			</div>
+			<div class="modal-body" >
+				<form action="submit.php?act=resetFactory" method="post">
+					<div class="form-group">
+						<label>Are you sure to 'Reset Factory' Version!!!</label>
+					</div>
+					<h4 class="" id="restoreSafeTitle1">Resetting Factory Version Means..
+					</h4>
+					<p id="restoreSafeContent1">If site's content is messed up anyhow at present [Disaster]. In this case you can recover Factory version.<br />
+						Or You want to start all over again.<br />
+						If you have not marked any Last Safe earlier, It will effect 'no change'.<br />
+					</p>
+					<button type="submit" class="btn btn-warning">Yes! This is best..</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No! I'll do it later.</button>
+				</form>
+			</div>
+			<!--<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				 </div>-->
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smodata>
+	<comments>
+		<item>You can download - edit - upload this file.</item>
+		<item>Beware!!! This is only file, that shows data in website.</item>
+		
+	</comments>
+	<pagetitle>Page Title</pagetitle>
+	<title>
+		<name>Title Goes Here..</name>
+		<subtitle>Subtitle Here..</subtitle>
+	</title>
+	<para>
+<item><dt>ParaTitle1</dt><dd>ParaDescription1</dd></item>
+<item><dt>ParaTitle2</dt><dd>ParaDescription2</dd></item>
+</para>
+<dls></dls>
+<footer>
+<text>Profilo Developers 2016</text>
+</footer>
+</smodata>
